@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+/* CSS Global Variables untuk Tema */
+:root {
+    --primary-gradient: linear-gradient(90deg, #00bfff, #a033ff);
+    --background-gradient: radial-gradient(ellipse at center, #1b2735 0%, #090a0f 100%);
+    --glass-background: rgba(26, 26, 26, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --text-color: #e0e0e0;
+    --heading-color: #ffffff;
+}
+
+/* Reset dan Gaya Dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #090a0f;
+    background-image: var(--background-gradient);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+a {
+    transition: all 0.3s ease;
+}
+
+/* Header */
+header {
+    background: var(--glass-background);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--glass-border);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a.active {
+    background: var(--primary-gradient);
+    color: var(--heading-color);
+}
+
+a:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 191, 255, 0.6);
+}
+
+/* Main Content Area */
+main {
+    padding-top: 80px;
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#hero h1 {
+    color: var(--heading-color);
+    font-size: 4rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+#hero .subtitle {
+    font-size: 1.5rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--primary-gradient);
+    color: #fff;
+    padding: 14px 28px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Content Sections */
+.content-section {
+    padding: 5rem 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.content-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.section-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.section-title i {
+    font-size: 2rem;
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+h2 {
+    color: var(--heading-color);
+    font-size: 2.5rem;
+    margin-bottom: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid transparent;
+    border-image: var(--primary-gradient) 1;
+    background: none;
+}
+
+#about .container,
+#projects .container,
+#contact .container {
+    text-align: center;
+}
+
+/* Project Card */
+.project-card {
+    background: var(--glass-background);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card h3 {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+/* Contact Section */
+.contact-link {
+    display: block;
+    margin: 1rem 0;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.social-links {
+    margin-top: 1.5rem;
+}
+
+.social-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 2rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    background: transparent;
+    border-top: 1px solid var(--glass-border);
+}
+
+/* Terapkan efek :hover HANYA pada perangkat yang memiliki mouse (non-touch) */
+@media (hover: hover) and (pointer: fine) {
+    nav ul li a:hover {
+        color: #fff;
+    }
+
+    .cta-button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(160, 51, 255, 0.4);
+    }
+
+    .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 30px rgba(0, 191, 255, 0.2);
+    }
+
+    .contact-link:hover {
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+    
+    .social-links a:hover {
+        transform: scale(1.1);
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    #hero h1 { font-size: 2.8rem; }
+    #hero .subtitle { font-size: 1.2rem; }
+    .section-title i { font-size: 1.8rem; }
+    h2 { font-size: 2rem; }
+    nav ul { display: none; }
+}
+
+
+/* --- TAMBAHAN: GAYA UNTUK LOADING SPINNER --- */
+#spinner-wrapper {
+    position: fixed; /* Tetap di posisi yang sama bahkan saat scroll */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999; /* Pastikan berada di atas semua elemen lain */
+    background-image: var(--background-gradient); /* Gunakan background yang konsisten */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Transisi untuk efek fade-out saat menghilang */
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+/* Kelas untuk menyembunyikan spinner */
+#spinner-wrapper.hidden {
+    opacity: 0;
+    pointer-events: none; /* Nonaktifkan interaksi mouse saat menghilang */
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--glass-border); /* Warna lingkaran dasar */
+    border-top-color: #00bfff; /* Warna bagian yang berputar (salah satu warna gradien) */
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Animasi untuk memutar spinner */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
